@@ -10,8 +10,7 @@ module TinyMCE::Rails
 
     def self.defaults
       {
-        "selector" => "textarea.tinymce",
-        "cache_suffix" => "?v=#{VERSION}"
+        "selector" => "textarea.tinymce"
       }
     end
 
