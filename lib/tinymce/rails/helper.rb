@@ -16,9 +16,10 @@ module TinyMCE::Rails
     # @example
     #   <%= tinymce(selector: "editorClass", theme: "inlite") %>
     def tinymce(config=:default, options={})
-      javascript_tag do
+      javascript_tag(nonce: true) do
         unless @_tinymce_configurations_added
           concat tinymce_configurations_javascript
+          concat "\n"
           @_tinymce_configurations_added = true
         end
 
